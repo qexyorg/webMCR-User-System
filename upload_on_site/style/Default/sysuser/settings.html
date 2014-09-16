@@ -1,0 +1,42 @@
+<form method="post">
+
+	<h3>Основные настройки</h3>
+
+	<div>
+		<input type="text" name="us_s_title" value="<?php echo $title; ?>">
+		- Название страницы системы пользователей
+	</div>
+
+	<div>
+		<input type="text" name="us_lvl_min" value="<?php echo $lvl_min; ?>">
+		- Уровень доступа для просмотра списка пользователей
+	</div>
+
+	<div>
+		<input type="text" name="us_lvl_adm" value="<?php echo $lvl_adm; ?>">
+		- Уровень доступа к настройкам администратора
+	</div>
+
+	<div>
+		<input type="text" name="us_rop" value="<?php echo $rop; ?>">
+		- Результатов на страницу
+	</div>
+
+	<div>
+		<select name="us_ajax">
+			<option value="0">Нет</option>
+			<option value="1" <?php echo $ajax; ?>>Да</option>
+		</select>
+		- Использование Ajax для просмотра информации о пользователе
+	</div>
+
+	<div>
+		<select name="us_mailbox">
+			<option value="0">Нет</option>
+			<option value="1" <?php echo $mailbox; ?>>Да</option>
+		</select>
+		- Использовать совместимость с MailBox
+	</div>
+
+	<div><input type="submit" name="submit" value="Сохранить" class="btn btn-info"></div>
+</form>

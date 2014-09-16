@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Обновление User System с предыдущих версий</title>
+	<style>
+	body{
+		background: #F5F5F5;
+		font-family: verdana;
+		font-size: 10pt;
+	}
+
+	.title{
+		text-align: center;
+		font-size: 20pt;
+		font-weight: bold;
+	}
+
+	p{padding: 0 30px;}
+
+	code:before{
+		content: "Код";
+		position: absolute;
+		margin-top: -30px;
+		margin-left: -11px;
+		background: #fff;
+		padding: 1px;
+		border:1px solid #d6d6d6;
+	}
+
+	code{
+		background: #fff;
+		padding: 10px;
+		margin: 30px;
+		border:1px solid #d6d6d6;
+		display:  block;
+		width: 700px;
+		border-radius: 0px 5px 5px 5px;
+	}
+
+	</style>
+</head>
+
+<body>
+<p class="title">Обновление с предыдущих версий</p>
+
+<p>Внимание! Данной установкой стоит пользоваться только в том случае, если ранее данный модуль был установлен</p>
+<p>В противном случае, воспользуйтесь обычной установкой</p>
+<br>
+<p>1. Удаляем все файлы и папки из директории style/Default/sysuser/</p>
+<p>2. Заливаем все файлы и папки в главный каталог WebMCR с заменой текущих</p>
+<p>3. Выставляем права на запись папки configs и файла us.cfg.php</p>
+
+<p>4. Открываем файл .htaccess и заменяем все строчки со словом "users" на</p>
+<code>RewriteRule ^go/users/page-(\d+)/?$ index.php?mode=users&pid=$1 [L,NE]<br>
+RewriteRule ^go/users/(\w+)/?$ index.php?mode=users&do=$1 [L,NE]<br>
+RewriteRule ^go/users/full/(\w+)/?$ index.php?mode=users&do=full&op=$1 [L,NE]</code>
+
+<p>Готово</p>
+
+<!-- Copyright © -->
+<center><b>Users System</b><br>
+Авторство принадлежит "<a href="http://qexy.org" target="_blank">Qexy.org</a>"<br>
+Все права защищены.<br>
+GNU GENERAL PUBLIC LICENSE V3<br>
+	<br>
+Контактная информация<br>
+E-Mail: "support@qexy.org"<br></center>
+</body>
+
+</html>
