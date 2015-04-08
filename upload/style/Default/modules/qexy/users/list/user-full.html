@@ -1,0 +1,47 @@
+<div class="profile-page">
+	<legend><h5>Профиль пользователя <?php echo $data['LOGIN']; ?></h5></legend>
+
+	<div class="profile-img span5">
+		<div class="front">
+			<div style="background: url('<?php echo $data['AVATAR']; ?>');"></div>
+		</div>
+
+		<div class="rear">
+			<div style="background: url('<?php echo $data['AVATAR']; ?>');"></div>
+		</div>
+	</div>
+
+	<div class="span6">
+		<table class="table table-striped table-condensed">
+			<tbody>
+				<tr>
+					<td><b>Группа</b></td>
+					<td><?php echo $data['GROUP']; ?></td>
+				</tr>
+
+				<tr>
+					<td><b>Пол</b></td>
+					<td><?php echo $data['GENDER']; ?></td>
+				</tr>
+
+				<tr>
+					<td><b>Дата регистрации</b></td>
+					<td><?php echo $data['DATE_REG']; ?></td>
+				</tr>
+
+				<tr>
+					<td><b>Последняя активность</b></td>
+					<td><?php echo $data['DATE_LAST']; ?></td>
+				</tr>
+
+				<tr>
+					<td><b>Последний вход в игру</b></td>
+					<td><?php echo $data['DATE_GAME']; ?></td>
+				</tr>
+
+				<?php echo $data['MAILBOX']; ?>
+			</tbody>
+		</table>
+	</div>
+	<?php echo $data['COMMENTS']; ?>
+</div>

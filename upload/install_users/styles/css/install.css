@@ -1,0 +1,6 @@
+.user-content .user-install { font-family: verdana; font-size: 12px; }
+.user-content .user-install h4 { color: #555; }
+.user-content .user-install .reinst { margin: 10px; }
+.user-content .user-install .ins-submit { text-align: right; margin-top: 20px; }
+.user-content .user-install .ins-menu { width: 580px; height: 66px; border: 2px double #ccc; border-radius: 4px; background: url("../img/menu.png") no-repeat; margin: 10px; }
+.user-content .user-install .user-logo { width: 165px; height: 173px; background: url("../img/logo.png") no-repeat; float: right; }

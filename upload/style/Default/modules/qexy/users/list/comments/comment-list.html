@@ -1,0 +1,9 @@
+	<div class="cleaner"></div>
+	<legend><h6>Комментарии профиля</h6></legend>
+	<form method="POST" class="profile-comment">
+		<?php echo $data['COMMENTS']; ?>
+		<?php echo $data['PAGINATION']; ?>
+		<input type="hidden" name="<?php echo $data['F_SECURITY']; ?>" value="<?php echo $data['F_SET']; ?>">
+		<textarea rows="4" class="input-block-level" name="comment" placeholder="Введите текст"></textarea>
+		<p class="text-right"><button class="btn btn-primary" name="submit">Комментировать</button></p>
+	</form>

@@ -1,0 +1,75 @@
+<div class="user-settings">
+	<form method="post">
+		<table class="table table-hover table-bordered">
+
+			<tbody>
+				<tr>
+					<td class="name">Название
+						<div class="desc">- Название модуля системы пользователей (Отображается в заголовке страницы и хлебных крошках)</div>
+					</td>
+					<td class="inputs"><input type="text" name="title" placeholder="Название" value="<?php echo $this->cfg['title']; ?>" required></td>
+				</tr>
+
+				<tr>
+					<td class="name">Использовать комментарии
+						<div class="desc">- Функция позволяет комментировать профили пользователей</div>
+					</td>
+					<td class="inputs">
+						<select name="use_comments">
+							<option value="0">Нет</option>
+							<option value="1" <?php echo $data['USE_COMMENTS']; ?>>Да</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="name">Пользователей на страницу
+						<div class="desc">- Кол-во выводимых пользователей на одну страницу</div>
+					</td>
+					<td class="inputs"><input type="text" name="rop_list" placeholder="Число" value="<?php echo $this->cfg['rop_list']; ?>" pattern="^(\d+)$" required></td>
+				</tr>
+
+				<tr>
+					<td class="name">Комментариев на страницу
+						<div class="desc">- Кол-во выводимых комментариев на одну страницу</div>
+					</td>
+					<td class="inputs"><input type="text" name="rop_list" placeholder="Число" value="<?php echo $this->cfg['rop_list']; ?>" pattern="^(\d+)$" required></td>
+				</tr>
+
+				<tr>
+					<td class="name">Уровень доступа к списку пользователей
+						<div class="desc">- Минимальный уровень доступа к списку пользователей</div>
+					</td>
+					<td class="inputs"><input type="text" name="lvl_access" placeholder="Число" value="<?php echo $this->cfg['lvl_access']; ?>" required></td>
+				</tr>
+
+				<tr>
+					<td class="name">Уровень доступа к панели управления
+						<div class="desc">- Минимальный уровень доступа к панели управления статическими страницами</div>
+					</td>
+					<td class="inputs"><input type="text" name="lvl_admin" placeholder="Число" value="<?php echo $this->cfg['lvl_admin']; ?>" required></td>
+				</tr>
+
+				<tr>
+					<td class="name">Использовать MailBox
+						<div class="desc">- Если вы используете модуль "<a href="https://github.com/qexyorg/webMCR-MailBox" target="_blank">MailBox</a>", то при просмотре полной информации о пользователе, будет выводиться кнопка для отправки сообщения пользователю</div>
+					</td>
+					<td class="inputs">
+						<select name="use_mailbox">
+							<option value="0">Нет</option>
+							<option value="1" <?php echo $data['USE_MAILBOX']; ?>>Да</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td class="submits" colspan="2">
+						<input type="hidden" name="<?php echo $data['F_SECURITY']; ?>" value="<?php echo $data['F_SET']; ?>">
+						<input type="submit" class="btn btn-primary" name="submit" value="Сохранить">
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</form>
+</div>

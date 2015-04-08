@@ -1,0 +1,38 @@
+.user-global .menu { margin: 5px; display: block; text-align: right; }
+
+.user-global .user-list.table-hover tbody tr > td {
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}
+
+.user-global .user-list.table-hover tbody tr:hover > td {
+	background-color: #d9edf7;
+}
+
+.user-global .user-list.table-hover tbody tr.row-female:hover > td {
+	background-color: #f2dede !important;
+}
+
+.user-global .cleaner { clear: both; }
+
+.user-global .user-list td { vertical-align: middle; }
+.user-global .user-list td .thumbnail { width: 32px; height: 32px; }
+
+.user-global .profile-page .profile-img > div { display: inline-block; margin-left: 10px; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0px 0px 10px 0px rgba(150,150,150,0.75); }
+.user-global .profile-page .profile-img > div > div { width: 112px; height: 224px; margin: 5px; }
+.user-global .profile-page .profile-img > div.rear > div { background-position: -112px 0px !important; }
+.user-global .profile-page .profile-comment { margin-top: 15px; }
+.user-global .profile-page .profile-comment textarea { }
+
+.user-global .profile-page .comment-id { margin-top: 10px; margin-bottom: 20px; }
+.user-global .profile-page .comment-id > p { font-size: 14px; }
+.user-global .profile-page .comment-id .comment-actions { float: right; vertical-align: top; }
+
+.user-global .user-settings .table { font-family: verdana; background: #fff; }
+.user-global .user-settings .table .name { font-weight: bold; color: #555; width: 60%; }
+.user-global .user-settings .table .desc { font-weight: normal; color: #999; font-size: 11px; }
+.user-global .user-settings .table .submits { text-align: right; }
+
+.user-copyright { display: block; width: 54px; height: 55px; background: url("../img/copyright_icon.png") no-repeat; float: right; margin-top: 10px; }
