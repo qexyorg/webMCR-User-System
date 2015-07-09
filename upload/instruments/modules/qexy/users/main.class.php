@@ -45,7 +45,7 @@ class module{
 		$bd_users		= $mcfg['bd_users'];
 		$site_ways		= $mcfg['site_ways'];
 
-		$query = $this->db->query("SELECT `u`.`{$bd_users['id']}`, `u`.`{$bd_users['login']}`, `u`.`{$bd_users['female']}`, `g`.`name` AS `group`, `u`.`default_skin`, `u`.`female`
+		$query = $this->db->query("SELECT `u`.`{$bd_users['id']}`, `u`.`{$bd_users['login']}`, `u`.`{$bd_users['female']}`, `g`.`name` AS `group`, `u`.`default_skin`
 
 									FROM `{$bd_names['users']}` AS `u`
 
