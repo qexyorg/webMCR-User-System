@@ -119,7 +119,7 @@ class module{
 
 	private function user_full(){
 
-		$login			= $this->db->safesql($_GET['id']);
+		$login			= $this->db->safesql($_GET['uid']);
 
 		// CSRF Security name
 
@@ -153,7 +153,7 @@ class module{
 		$array = array(
 			"Главная" => BASE_URL,
 			$this->cfg['title'] => MOD_URL,
-			"Профиль пользователя $login" => MOD_URL.'&id='.$login,
+			"Профиль пользователя $login" => MOD_URL.'&uid='.$login,
 		);
 
 		$this->bc		= $this->api->bc($array); // Set breadcrumbs
@@ -187,16 +187,16 @@ class module{
 	private function comment_delete(){
 
 		// To login
-		$login = $this->db->safesql($_GET['id']);
+		$login = $this->db->safesql($_GET['uid']);
 
 		// Comment id
 		$cid = intval(@$_POST['delete']);
 
 		$delete = $this->db->query("DELETE FROM `qx_us_comments` WHERE id='$cid' AND (uid='{$this->user->id}' OR `from`='{$this->user->id}' OR '{$this->user->lvl}'>='{$this->cfg['lvl_admin']}')");
 	
-		if(!$delete){ $this->api->notify("Произошла ошибка баз данных", "&id=$login", "Ошибка!", 3); }
+		if(!$delete){ $this->api->notify("Произошла ошибка баз данных", "&uid=$login", "Ошибка!", 3); }
 
-		$this->api->notify("Выбранный комментарий успешно удален", "&id=$login", "Поздравляем!", 1);
+		$this->api->notify("Выбранный комментарий успешно удален", "&uid=$login", "Поздравляем!", 1);
 	}
 
 	private function comment_list($uid, $login){
@@ -204,7 +204,7 @@ class module{
 
 		$sql			= "SELECT COUNT(*) FROM `qx_us_comments` WHERE uid='$uid'"; // Set SQL query for pagination function
 
-		$page			= "&id=$login&pid="; // Set url for pagination function
+		$page			= "&uid=$login&pid="; // Set url for pagination function
 
 		$pagination		= $this->api->pagination($this->cfg['rop_comments'], $page, $sql); // Set pagination
 
@@ -215,7 +215,7 @@ class module{
 
 			$text = trim($this->db->safesql(@$_POST['comment']));
 
-			if(empty($text)){ $this->api->notify("Не заполнено поле комментария", "&id=$login", "Ошибка!", 3); }
+			if(empty($text)){ $this->api->notify("Не заполнено поле комментария", "&uid=$login", "Ошибка!", 3); }
 
 			$new_data = array(
 				"date_create" => time(),
@@ -230,10 +230,10 @@ class module{
 											('$uid', '{$this->user->id}', '$text', '$new_data')");
 
 			if(!$insert){
-				$this->api->notify("Произошла ошибка баз данных", "&id=$login", "Ошибка!", 3);
+				$this->api->notify("Произошла ошибка баз данных", "&uid=$login", "Ошибка!", 3);
 			}
 			
-			$this->api->notify("Ваш комментарий успешно добавлен", "&id=$login", "Поздравляем!", 1);
+			$this->api->notify("Ваш комментарий успешно добавлен", "&uid=$login", "Поздравляем!", 1);
 
 		}
 
@@ -295,7 +295,7 @@ class module{
 	}
 
 	public function _list(){
-		return (isset($_GET['id'])) ? $this->user_full() : $this->user_list();
+		return (isset($_GET['uid'])) ? $this->user_full() : $this->user_list();
 	}
 }
 
