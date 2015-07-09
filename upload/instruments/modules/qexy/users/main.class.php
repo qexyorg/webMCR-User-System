@@ -172,7 +172,7 @@ class module{
 		$data = array(
 			"LOGIN"			=> $login,
 			"GROUP"			=> $group,
-			"AVATAR"		=> BASE_URL.'skin.php?user_name='.$login.'&refresh='.mt_rand(1000, 9999),
+			"AVATAR"		=> BASE_URL.'skin.php?name='.$login.'&refresh='.mt_rand(1000, 9999),
 			"GENDER"		=> $gender,
 			"DATE_REG"		=> $date_register,
 			"DATE_LAST"		=> $date_active,

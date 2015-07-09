@@ -57,13 +57,10 @@ if($cfg['install']==true){ $install = true; }
 if(isset($install) && $do!=='install'){ $api->notify("Требуется установка", "&do=install", "Внимание!", 4); }
 
 function get_menu($api){
-	ob_start();
 
-	if($api->user->lvl < $api->cfg['lvl_admin']){ return ob_get_clean(); }
+	if($api->user->lvl < $api->cfg['lvl_admin']){ return; }
 
-	echo $api->sp("admin/menu.html");
-
-	return ob_get_clean();
+	return $api->sp("admin/menu.html");
 }
 
 // Select page
