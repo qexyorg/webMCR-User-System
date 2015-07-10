@@ -78,7 +78,7 @@ class module{
 										  PRIMARY KEY (`id`)
 										) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;");
 
-			if(!$create){ $this->api->notify("Ошибка еустановки", "&do=install", "Ошибка!", 3); }
+			if(!$create){ $this->api->notify("Ошибка установки", "&do=install", "Ошибка!", 3); }
 
 			$_SESSION['step_2'] = true;
 
