@@ -8,7 +8,7 @@
  *
  * @copyright Copyright (c) 2015 Qexy.org
  *
- * @version 1.4.0
+ * @version 1.4.1
  *
  */
 
@@ -16,7 +16,7 @@
 if (!defined('MCR')){ exit("Hacking Attempt!"); }
 
 define('QEXY', true);
-define('MOD_VERSION', '1.4.0');												// Module version
+define('MOD_VERSION', '1.4.1');												// Module version
 define('MOD_STYLE', STYLE_URL.'Default/modules/qexy/users/');				// Module style folder
 define('MOD_URL', BASE_URL.'?mode=users');									// Base module URL
 define('MOD_STYLE_ADMIN', MOD_STYLE.'admin/');								// Module style admin folder
@@ -122,7 +122,7 @@ $content_main = $api->sp("global.html", $content_data);
  *
  * @copyright Copyright (c) 2015 Qexy.org
  *
- * @version 1.4.0
+ * @version 1.4.1
  *
  */
 ?>

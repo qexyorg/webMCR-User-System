@@ -8,7 +8,7 @@
  *
  * @copyright Copyright (c) 2015 Qexy.org
  *
- * @version 1.2.0
+ * @version 1.4.1
  *
  */
 
@@ -238,7 +238,7 @@ class module{
  *
  * @copyright Copyright (c) 2015 Qexy.org
  *
- * @version 1.2.0
+ * @version 1.4.1
  *
  */
 ?>
