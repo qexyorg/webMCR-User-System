@@ -8,6 +8,6 @@ $cfg = array (
   'comments' => true,
   'mailbox' => false,
   'rop_list' => 10,
-  'rop_comments' => 1,
+  'rop_comments' => 10,
 );
 ?>
