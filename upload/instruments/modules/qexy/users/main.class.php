@@ -70,7 +70,7 @@ class module{
 
 			$class = (intval($ar[$bd_users['female']])==0) ? '' : 'row-female';
 
-			$charname = (intval($ar[$bd_users['female']])==0) ? 'Char_Mini_female.png' : 'Char_Mini.png';
+			$charname = (intval($ar[$bd_users['female']])==0) ? 'Char_Mini.png' : 'Char_Mini_female.png';
 
 			$avatar = (intval($ar['default_skin'])===1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'_Mini.png';
 
@@ -126,8 +126,9 @@ class module{
 		$this->mcfg		= $this->api->getMcrConfig();
 		$bd_names		= $this->mcfg['bd_names'];
 		$bd_users		= $this->mcfg['bd_users'];
+		$site_ways		= $this->mcfg['site_ways'];
 
-		$sql			= "SELECT `u`.`{$bd_users['id']}`, `u`.`{$bd_users['female']}`, `u`.`{$bd_users['login']}`, `u`.`{$bd_users['ctime']}`,
+		$sql			= "SELECT `u`.`{$bd_users['id']}`, `u`.`{$bd_users['female']}`, `u`.`{$bd_users['login']}`, `u`.`{$bd_users['ctime']}`, `u`.`default_skin`,
 									`u`.`comments_num`, `u`.`gameplay_last`, `u`.`active_last`, `g`.`name` AS `group`
 							FROM `{$bd_names['users']}` AS `u`
 							LEFT JOIN `{$bd_names['groups']}` AS `g`
@@ -169,10 +170,14 @@ class module{
 			"LOGIN" => $login,
 		);
 
+		$charname = (intval($ar[$bd_users['female']])==0) ? 'Char.png' : 'Char_female.png';
+
+		$avatar = (intval($ar['default_skin'])===1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'_Mini.png';
+
 		$data = array(
 			"LOGIN"			=> $login,
 			"GROUP"			=> $group,
-			"AVATAR"		=> BASE_URL.'skin.php?name='.$login.'&refresh='.mt_rand(1000, 9999),
+			"AVATAR"		=> BASE_URL.$site_ways['mcraft'].'/tmp/skin_buffer/'.$avatar,
 			"GENDER"		=> $gender,
 			"DATE_REG"		=> $date_register,
 			"DATE_LAST"		=> $date_active,
