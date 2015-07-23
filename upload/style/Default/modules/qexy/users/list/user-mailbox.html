@@ -1,8 +1,6 @@
 				<tr>
 					<td><b>Почта</b></td>
 					<td>
-						<form method="POST" action="<?php echo BASE_URL; ?>go/mail/send">
-						<button name="to" value="<?php echo $data['LOGIN']; ?>" class="btn btn-mini btn-block"><i class="icon-envelope"></i> Написать</button>
-						</form>
+						<a class="btn btn-mini btn-block" href="<?php echo BASE_URL; ?>?mode=mailbox&do=topics&op=new&to=<?php echo $data['LOGIN']; ?>"><i class="icon-envelope"></i> Написать</a>
 					</td>
 				</tr>
