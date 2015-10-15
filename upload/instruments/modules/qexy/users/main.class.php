@@ -62,17 +62,17 @@ class module{
 
 		while($ar = $this->db->get_row($query)){
 			
-			$gender = (intval($ar[$bd_users['female']])==0) ? 'Мужской' : 'Женский';
+			$gender = (intval($ar[$bd_users['female']])==1) ? 'Женский' : 'Мужской';
 
 			$login = $this->db->HSC($ar[$bd_users['login']]);
 
 			$group = (empty($ar['group'])) ? '<b class="text-error">Группа удалена</b>' : $this->db->HSC($ar['group']);
 
-			$class = (intval($ar[$bd_users['female']])==0) ? '' : 'row-female';
+			$class = (intval($ar[$bd_users['female']])==1) ? 'row-female' : '';
 
-			$charname = (intval($ar[$bd_users['female']])==0) ? 'Char_Mini.png' : 'Char_Mini_female.png';
+			$charname = (intval($ar[$bd_users['female']])==1) ? 'Char_Mini_female.png' : 'Char_Mini.png';
 
-			$avatar = (intval($ar['default_skin'])===1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'_Mini.png';
+			$avatar = (intval($ar['default_skin'])==1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'_Mini.png';
 
 			$data = array(
 				"ID"		=> intval($ar[$bd_users['id']]),
@@ -172,7 +172,7 @@ class module{
 
 		$charname = (intval($ar[$bd_users['female']])==0) ? 'Char.png' : 'Char_female.png';
 
-		$avatar = (intval($ar['default_skin'])===1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'_Mini.png';
+		$avatar = (intval($ar['default_skin'])===1) ? 'default/'.$charname.'?refresh='.mt_rand(1000, 9999) : $login.'.png';
 
 		$data = array(
 			"LOGIN"			=> $login,
